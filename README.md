@@ -1,18 +1,19 @@
-📄 Proyecto Módulo 1 – Trivial en Python
+# 📄 Proyecto Módulo 1 – Trivial en Python
 
-# 🎮 Trivial de Series – Proyecto Módulo 1 (Python)
+## 🎮 Trivial de Series – Proyecto Módulo 1 (Python)
 
 Un juego de preguntas y respuestas desarrollado en Python por el Equipo 2 formado por Camila López, María Granero y Nieves Sánchez.
 
 El objetivo es practicar estructuras de control, diccionarios, listas, funciones, manejo de errores y lógica básica.
 
-# 👥 Equipo y Roles
-Miembro	          Rol	                    Tareas principales
-Nieves Sánchez    Scrum Master	            Organización, tablero Kanban, milestones, control de avances, README y revisión
-Camila López      Desarrollo	            Lógica del juego, funciones, control de errores y revisión
-María Granero     Documentación	            Estructura de datos, README, presentación, prueba del juego y revisión
+## 👥 Equipo y Roles
 
-# 🎯 Objetivo del proyecto
+Miembro           Rol                    Tareas principales
+Nieves Sánchez    Scrum Master           Organización, tablero Kanban, milestones, control de avances, README y revisión
+Camila López      Desarrollo             Lógica del juego, funciones, control de errores y revisión
+María Granero     Documentación          Estructura de datos, README, presentación, prueba del juego y revisión
+
+## 🎯 Objetivo del proyecto
 
 Desarrollar un juego de trivial en consola donde:
 
@@ -30,7 +31,7 @@ El juego finaliza cuando:
 
 se responden todas las preguntas seleccionadas, o el jugador se queda sin vidas.
 
-# 🧠 Contenidos de Python aplicados
+## 🧠 Contenidos de Python aplicados
 
 Este proyecto pone en práctica:
 
@@ -50,61 +51,61 @@ Conversión de datos (int(), upper(), etc.)
 
 Uso de librerías (random.sample)
 
-# 🏗️ Estructura del juego
+## 🏗️ Estructura del juego
 
 1. Inicio
 
-Mensaje de bienvenida
+    Mensaje de bienvenida
 
-Petición del nombre del jugador
+    Petición del nombre del jugador
 
-Petición del número de preguntas
+    Petición del número de preguntas
 
-Validación: mínimo 5
+    Validación: mínimo 5
 
-Validación: máximo = número total de preguntas disponibles
+    Validación: máximo = número total de preguntas disponibles
 
-Manejo de errores con try/except
+    Manejo de errores con try/except
 
 2. Preparación de la partida
 
-Selección aleatoria de preguntas con random.sample()
+    Selección aleatoria de preguntas con random.sample()
 
-Inicialización de variables:
+    Inicialización de variables:
 
-puntuacion = 0
+    puntuacion = 0
 
-vidas = 3
+    vidas = 3
 
 3. Bucle principal del juego
 
-Para cada pregunta del mazo:
+    Para cada pregunta del mazo:
 
-Mostrar pregunta y opciones
+    Mostrar pregunta y opciones
 
-Solicitar respuesta (A/B/C/D)
+    Solicitar respuesta (A/B/C/D)
 
-Validar entrada
+    Validar entrada
 
-Comparar con la respuesta correcta
+    Comparar con la respuesta correcta
 
-Si acierta → sumar 1 punto
+    Si acierta → sumar 1 punto
 
-Si falla → restar 1 vida
+    Si falla → restar 1 vida
 
-Si vidas == 0 → mensaje de fin de partida + break
+    Si vidas == 0 → mensaje de fin de partida + break
 
 4. Final del juego
 
-Mostrar puntuación total
+    Mostrar puntuación total
 
-Mensaje final según:
+    Mensaje final según:
 
-si ha agotado vidas
+    si ha agotado vidas
 
-o si ha terminado todas las preguntas
+    o si ha terminado todas las preguntas
 
-# 📦 Estructura de datos
+## 📦 Estructura de datos
 
 Las preguntas están almacenadas en una lista de diccionarios, un formato como este:
 
@@ -130,7 +131,7 @@ Acceso limpio a opciones con claves A/B/C/D
 
 Manipulación sencilla por parte del bucle del juego
 
-# 🔀 Flujo del programa (resumen visual)
+## 🔀 Flujo del programa (resumen visual)
 
 Inicio → Petición de nombre → Elección nº de preguntas → Validación  
 ↓  
@@ -149,16 +150,16 @@ Bucle for de preguntas
 ↓  
 Resultados y mensaje final
 
-# 🧪 Pruebas realizadas
+## 🧪 Pruebas realizadas
 
-Prueba	                                    Resultado
-Introducir texto en lugar de número	        Error controlado con try/except
-Elegir menos de 5 preguntas	                Mensaje + nueva petición
-Elegir más preguntas de las disponibles	    Mensaje + nueva petición
-Responder con letras minúsculas	            Convertido a mayúsculas con .upper()
-Perder todas las vidas	                    Bucle finaliza con break
+Prueba                                     Resultado
+Introducir texto en lugar de número         Error controlado con try/except
+Elegir menos de 5 preguntas                 Mensaje + nueva petición
+Elegir más preguntas de las disponibles     Mensaje + nueva petición
+Responder con letras minúsculas             Convertido a mayúsculas con .upper()
+Perder todas las vidas                     Bucle finaliza con break
 
-# 🚀 Mejoras futuras
+## 🚀 Mejoras futuras
 
 Interfaz gráfica con Tkinter
 
@@ -172,7 +173,7 @@ Añadir sonidos o animaciones
 
 Integrar niveles de dificultad
 
-# 🎤 Presentación del proyecto
+## 🎤 Presentación del proyecto
 
 Incluye:
 
@@ -188,7 +189,7 @@ Demo en directo
 
 Preguntas de la profesora (cliente)
 
-# 📚 Cómo ejecutar el programa
+## 📚 Cómo ejecutar el programa
 
 Requisitos:
 
@@ -200,6 +201,6 @@ Ejecutar en Jupyter Notebook:
 
 Abrir el archivo trivial.ipynb → Correr todas las celdas
 
-# 📄 Licencia
+## 📄 Licencia
 
 Proyecto académico del bootcamp. Uso educativo.
