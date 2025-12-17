@@ -14,7 +14,7 @@ preguntas = [
         "opciones": {
             "A": "Black Mirror",
             "B": "Bandersnatch",
-            "C": "Russian Doll",
+            "C": "Muñeca Rusa",
             "D": "Maniac"
         },
         "respuesta_correcta": "B"
@@ -22,7 +22,7 @@ preguntas = [
     {
         "pregunta": "El crimen perfecto puede nacer detrás de una máscara roja.",
         "opciones": {
-            "A": "Elite",
+            "A": "Élite",
             "B": "La Casa de Papel",
             "C": "Toy Boy",
             "D": "Lupin"
@@ -40,16 +40,6 @@ preguntas = [
         "respuesta_correcta": "B"
     },
     {
-        "pregunta": "Un inspector elegante que roba solo lo que considera justo.",
-        "opciones": {
-            "A": "You",
-            "B": "Lupin",
-            "C": "Narcos: México",
-            "D": "Clickbait"
-        },
-        "respuesta_correcta": "B"
-    },
-    {
         "pregunta": "Un ajedrez emocional donde cada movimiento la acerca a la grandeza… o a su caída.",
         "opciones": {
             "A": "El Buen Pastor",
@@ -63,7 +53,7 @@ preguntas = [
         "pregunta": "Una familia descubre que las paredes de su nueva casa esconden más que recuerdos.",
         "opciones": {
             "A": "Locke & Key",
-            "B": "The Haunting of Bly Manor",
+            "B": "La Maldición de Bly Manor",
             "C": "Slasher",
             "D": "You"
         },
@@ -103,7 +93,7 @@ preguntas = [
         "pregunta": "Una prisión donde sobrevivir es el mayor acto de ingeniería humana.",
         "opciones": {
             "A": "Vis a Vis",
-            "B": "The Platform (El Hoyo)",
+            "B": "El Hoyo",
             "C": "Snowpiercer",
             "D": "The Punisher"
         },
@@ -132,102 +122,12 @@ preguntas = [
     {
         "pregunta": "Una competencia mortal donde cientos de personas aceptan jugar por dinero, aun sabiendo que perder significa morir.",
         "opciones": {
-            "A": "The 3%",
+            "A": "El 3%",
             "B": "El Juego del Calamar",
             "C": "Alice in Borderland",
             "D": "Sweet Home"
         },
         "respuesta_correcta": "B"
-    },
-    {
-        "pregunta": "Una expedición para descubrir la verdad detrás del monstruo más famoso del mundo.",
-        "opciones": {
-            "A": "Godzilla",
-            "B": "Colossal",
-            "C": "Enola Holmes 2",
-            "D": "Enola Holmes"
-        },
-        "respuesta_correcta": "A"
-    },
-    {
-        "pregunta": "Una madre hará lo imposible para recuperar a su hijo desaparecido tras un extraño accidente.",
-        "opciones": {
-            "A": "Fractured",
-            "B": "The Guilty",
-            "C": "El Hoyo",
-            "D": "The Mother"
-        },
-        "respuesta_correcta": "A"
-    },
-    {
-        "pregunta": "Un misterioso agujero vertical decide el destino de quienes viven dentro de él.",
-        "opciones": {
-            "A": "Cadáver",
-            "B": "Cargo",
-            "C": "El Hoyo",
-            "D": "Ánimas"
-        },
-        "respuesta_correcta": "C"
-    },
-    {
-        "pregunta": "Un hombre despierta en una habitación sin recordar nada… excepto que debe escapar.",
-        "opciones": {
-            "A": "Forgotten",
-            "B": "Circle",
-            "C": "ELI",
-            "D": "Tau"
-        },
-        "respuesta_correcta": "A"
-    },
-    {
-        "pregunta": "Un grupo de adolescentes ricos se pasan el día bebiendo y drogándose.",
-        "opciones": {
-            "A": "Newness",
-            "B": "Closer",
-            "C": "Black Mirror",
-            "D": "Elite"
-        },
-        "respuesta_correcta": "D"
-    },
-    {
-        "pregunta": "Un ladrón rompe todas las reglas para demostrar que nadie puede atraparlo, ni siquiera el mejor agente del FBI.",
-        "opciones": {
-            "A": "Red Notice",
-            "B": "6 Underground",
-            "C": "Triple Frontera",
-            "D": "El Asalto"
-        },
-        "respuesta_correcta": "A"
-    },
-    {
-        "pregunta": "Una misión suicida en Las Vegas antes de que la ciudad se convierta por completo en un infierno.",
-        "opciones": {
-            "A": "Alive",
-            "B": "Army of the Dead",
-            "C": "Day of the Dead",
-            "D": "Cargo"
-        },
-        "respuesta_correcta": "B"
-    },
-    {
-        "pregunta": "Una madre guarda un terrible secreto mientras intenta mantener a su hija a salvo.",
-        "opciones": {
-            "A": "Bird Box",
-            "B": "The Unforgivable",
-            "C": "The Perfection",
-            "D": "The Mother"
-        },
-        "respuesta_correcta": "D"
-    },
-    {
-        "pregunta": "Un músico frustrado encuentra una nueva vida cuando un milagro musical ocurre en su barrio.",
-        "opciones": {
-            "A": "Tick, Tick… Boom!",
-            "B": "Eurovision",
-            "C": "Vivo",
-            "D": "The Dirt"
-        },
-        "respuesta_correcta": "A"
     },
     {
         "pregunta": "Una simple foto desencadena una historia de amor que viaja en el tiempo.",
@@ -240,14 +140,14 @@ preguntas = [
         "respuesta_correcta": "D"
     },
     {
-        "pregunta": "Un grupo de ladrones expertos quiere demostrar que incluso la obra más vigilada del mundo puede desaparecer.",
+        "pregunta": "Un ladrón rompe todas las reglas para demostrar que nadie puede atraparlo, ni siquiera el mejor agente del FBI.",
         "opciones": {
-            "A": "The Italian Job",
-            "B": "Now You See Me",
-            "C": "Army of Thieves",
-            "D": "Triple Frontier"
+            "A": "Red Notice",
+            "B": "6 Underground",
+            "C": "Triple Frontera",
+            "D": "El Asalto"
         },
-        "respuesta_correcta": "C"
+        "respuesta_correcta": "A"
     },
     {
         "pregunta": "Un músico ciego se convierte en el objetivo de una trama criminal que nunca vio venir.",
@@ -273,7 +173,7 @@ preguntas = [
         "pregunta": "Una joven descubre que su vida normal esconde poderes que nunca imaginó.",
         "opciones": {
             "A": "The Innocents",
-            "B": "Shadow and Bone",
+            "B": "Sombra y Hueso",
             "C": "The OA",
             "D": "Fate: The Winx Saga"
         },
@@ -288,36 +188,6 @@ preguntas = [
             "D": "The Irregulars"
         },
         "respuesta_correcta": "D"
-    },
-    {
-        "pregunta": "Una familia se muda a un pueblo aparentemente tranquilo… hasta que empiezan los rituales.",
-        "opciones": {
-            "A": "The Society",
-            "B": "Archive 81",
-            "C": "Bienvenidos a Edén",
-            "D": "Hemlock Grove"
-        },
-        "respuesta_correcta": "D"
-    },
-    {
-        "pregunta": "Un profesor aburrido se convierte en el criminal más buscado del país.",
-        "opciones": {
-            "A": "Narcos",
-            "B": "Better Call Saul",
-            "C": "You",
-            "D": "Breaking Bad"
-        },
-        "respuesta_correcta": "D"
-    },
-    {
-        "pregunta": "Tres hermanos heredan una llave que abre puertas… y secretos peligrosos.",
-        "opciones": {
-            "A": "Locke & Key",
-            "B": "The Haunting of Hill House",
-            "C": "Stranger Things",
-            "D": "The Order"
-        },
-        "respuesta_correcta": "A"
     },
     {
         "pregunta": "El fin del mundo empieza con un virus que transforma a los estudiantes en monstruos.",
@@ -350,16 +220,6 @@ preguntas = [
         "respuesta_correcta": "A"
     },
     {
-        "pregunta": "Una joven desaparece y las visiones del más allá podrían ser la clave para resolver el caso.",
-        "opciones": {
-            "A": "Ghost Whisperer",
-            "B": "The OA",
-            "C": "El Reino de los Espíritus",
-            "D": "La Chica de la Nieve"
-        },
-        "respuesta_correcta": "A"
-    },
-    {
         "pregunta": "Un hacker anónimo pone al mundo en alerta con filtraciones que muestran la verdad que nadie quiere ver.",
         "opciones": {
             "A": "Who Killed Sara?",
@@ -375,7 +235,47 @@ preguntas = [
             "A": "You",
             "B": "Younger",
             "C": "You Me Her",
-            "D": "Elite"
+            "D": "Élite"
+        },
+        "respuesta_correcta": "A"
+    },
+    {
+        "pregunta": "Una adolescente excéntrica descubre secretos oscuros mientras asiste a una academia para jóvenes talentos…",
+        "opciones": {
+            "A": "Chilling Adventures of Sabrina",
+            "B": "Wednesday",
+            "C": "Stranger Things",
+            "D": "The Umbrella Academy"
+        },
+        "respuesta_correcta": "B"
+    },
+    {
+        "pregunta": "Un brujo cazador de monstruos recorre un continente peligroso lleno de magia, intrigas políticas y criaturas aterradoras.",
+        "opciones": {
+            "A": "The Witcher",
+            "B": "Shadow and Bone",
+            "C": "Cursed",
+            "D": "The Umbrella Academy"
+        },
+        "respuesta_correcta": "A"
+    },
+    {
+        "pregunta": "En la alta sociedad londinense del siglo XIX, secretos, romances y escándalos familiares marcan la vida de sus jóvenes herederos.",
+        "opciones": {
+            "A": "Gossip Girl",
+            "B": "Bridgerton",
+            "C": "Downton Abbey",
+            "D": "Emily in Paris"
+        },
+        "respuesta_correcta": "B"
+    },
+    {
+        "pregunta": "Dos antiguos rivales de karate abren escuelas para entrenar a nuevas generaciones, reviviendo viejas rivalidades y enseñando disciplina y honor.",
+        "opciones": {
+            "A": "Cobra Kai",
+            "B": "The Karate Kid",
+            "C": "Warrior",
+            "D": "Into the Badlands"
         },
         "respuesta_correcta": "A"
     }
