@@ -3,7 +3,7 @@ import random
 import pygame
 
 from preguntas import preguntas
-from ui_utils import dibujar_texto_multilinea, dibujar_texto_en_rect
+from ui_utils import dibujar_texto_multilinea, dibujar_texto_multilinea_centrado, dibujar_texto_en_rect, texto_vidas
 
 # -------------------------
 # CONFIGURACIÓN PYGAME
@@ -12,7 +12,9 @@ pygame.init()
 ANCHO = 900
 ALTO = 600
 VENTANA = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Trivial Netflix - Pygame")
+
+# ✅ Título del juego (sin “frase.”)
+pygame.display.set_caption("Películas y series que dejan huella")
 
 # Colores estilo Netflix
 NEGRO = (0, 0, 0)
@@ -22,11 +24,22 @@ GRIS_BOTON = (40, 40, 40)
 GRIS_BOTON_HOVER = (80, 80, 80)
 BLANCO = (255, 255, 255)
 GRIS_CLARO = (200, 200, 200)
-ROJO = (200, 0, 0)
 
+# ✅ Colores para mensajes
+ROJO = (200, 0, 0)        # incorrecta / perder
+VERDE = (0, 200, 0)       # correcta / ganar
+
+# Fuentes
 FUENTE_TITULO = pygame.font.SysFont("arial", 40, bold=True)
 FUENTE_TEXTO = pygame.font.SysFont("arial", 24)
 FUENTE_PEQUE = pygame.font.SysFont("arial", 18)
+
+# ✅ Mensajes “un poco más grandes”
+FUENTE_FEEDBACK = pygame.font.SysFont("arial", 34, bold=True)
+FUENTE_FEEDBACK_PEQUE = pygame.font.SysFont("arial", 22)
+
+
+NOMBRE_JUEGO = "PELÍCULAS Y SERIES QUE DEJAN HUELLA"
 
 
 def crear_botones_opciones():
@@ -115,16 +128,12 @@ def main():
                                 estado = "INTRO_NUM"
                         else:
                             # ¿Cuántas preguntas quieres hacer? Elige al menos 5
-                            if texto_input.strip() == "":
-                                mensaje_error = "Entrada no válida. Tienes que introducir un número del 5 al 10."
-                            elif not texto_input.isdigit():
-                                mensaje_error = "Entrada no válida. Tienes que introducir un número del 5 al 10."
+                            if texto_input.strip() == "" or not texto_input.isdigit():
+                                mensaje_error = f"Entrada no válida. Introduce un número del 5 al {len(preguntas)}."
                             else:
                                 num = int(texto_input)
-                                if num < 5 or num > 10:
-                                    mensaje_error = "Por favor, introduce un número entre el 5 y 10."
-                                elif num > len(preguntas):
-                                    mensaje_error = f"Máximo {len(preguntas)} preguntas."
+                                if num < 5 or num > len(preguntas):
+                                    mensaje_error = f"Por favor, introduce un número entre 5 y {len(preguntas)}."
                                 else:
                                     num_preguntas = num
                                     mazo = random.sample(preguntas, num_preguntas)
@@ -169,14 +178,19 @@ def main():
                             if ultima_correcta:
                                 # ¡Respuesta correcta!
                                 puntuacion += 1
+                                estado = "FEEDBACK"
+                                break
                             else:
                                 # Fallo: restamos vida y comprobamos si se queda sin vidas
                                 vidas -= 1
                                 vidas_mostradas = vidas
                                 if vidas == 0:
+                                    # ✅ Si se queda sin vidas, vamos DIRECTO a GAME_OVER (sin pantalla intermedia)
                                     fin_por_vidas = True
-
-                            estado = "FEEDBACK"
+                                    estado = "GAME_OVER"
+                                else:
+                                    estado = "FEEDBACK"
+                                break
 
                 elif estado == "FEEDBACK":
                     avanzar_pregunta()
@@ -187,17 +201,18 @@ def main():
         VENTANA.fill(GRIS_OSCURO)
 
         if estado == "INICIO":
-            titulo = FUENTE_TITULO.render("TRIVIAL NETFLIX", True, ROJO_NETFLIX)
+            titulo = FUENTE_TITULO.render(NOMBRE_JUEGO, True, ROJO_NETFLIX)
             VENTANA.blit(titulo, (ANCHO // 2 - titulo.get_width() // 2, 150))
 
-            subtitulo = FUENTE_TEXTO.render("Adivina la serie o película con una frase absurda.", True, BLANCO)
+            # ✅ sin “frase.”
+            subtitulo = FUENTE_TEXTO.render("Adivina la serie o película.", True, BLANCO)
             VENTANA.blit(subtitulo, (ANCHO // 2 - subtitulo.get_width() // 2, 230))
 
             texto_inicio = FUENTE_TEXTO.render("Pulsa ENTER para empezar", True, GRIS_CLARO)
             VENTANA.blit(texto_inicio, (ANCHO // 2 - texto_inicio.get_width() // 2, 320))
 
         elif estado == "INTRO_NOMBRE":
-            titulo = FUENTE_TITULO.render("TRIVIAL NETFLIX", True, ROJO_NETFLIX)
+            titulo = FUENTE_TITULO.render(NOMBRE_JUEGO, True, ROJO_NETFLIX)
             VENTANA.blit(titulo, (ANCHO // 2 - titulo.get_width() // 2, 60))
 
             etiqueta = FUENTE_TEXTO.render("Nombre del jugador", True, BLANCO)
@@ -219,7 +234,7 @@ def main():
             titulo = FUENTE_TITULO.render(f"¡Bienvenida al juego, {nombre_jugador}!", True, ROJO_NETFLIX)
             VENTANA.blit(titulo, (ANCHO // 2 - titulo.get_width() // 2, 60))
 
-            subtitulo = FUENTE_TEXTO.render("¿Cuántas preguntas quieres hacer? Elige al menos 5", True, BLANCO)
+            subtitulo = FUENTE_TEXTO.render("¿Cuántas preguntas quieres hacer? (mínimo 5)", True, BLANCO)
             VENTANA.blit(subtitulo, (80, 180))
 
             caja = pygame.Rect(80, 230, 200, 40)
@@ -236,14 +251,13 @@ def main():
             texto_pregunta = pregunta_actual["pregunta"]
             opciones = pregunta_actual["opciones"]
 
-            titulo = FUENTE_TITULO.render("TRIVIAL NETFLIX", True, ROJO_NETFLIX)
+            titulo = FUENTE_TITULO.render(NOMBRE_JUEGO, True, ROJO_NETFLIX)
             VENTANA.blit(titulo, (20, 20))
 
-            inicio_msg = FUENTE_PEQUE.render("¡Que comience el juego!", True, BLANCO)
-            VENTANA.blit(inicio_msg, (ANCHO - inicio_msg.get_width() - 20, 30))
+            # Quitamos el texto "¡Que comience el juego!" para evitar solaparlo con el título.
 
             info_jugador = FUENTE_PEQUE.render(
-                f"Jugador: {nombre_jugador}  |  Puntuación: {puntuacion}  |  Vidas: {vidas}",
+                f"Jugador: {nombre_jugador}  |  Puntuación: {puntuacion}  |  {texto_vidas(vidas)}",
                 True,
                 BLANCO,
             )
@@ -268,14 +282,13 @@ def main():
             )
 
             pos_raton = pygame.mouse.get_pos()
-            letras = ["A", "B", "C", "D"]
             for idx, (letra, opcion) in enumerate(opciones.items()):
                 boton = botones[idx]
                 color = GRIS_BOTON_HOVER if boton.collidepoint(pos_raton) else GRIS_BOTON
                 pygame.draw.rect(VENTANA, color, boton, border_radius=8)
                 pygame.draw.rect(VENTANA, ROJO_NETFLIX, boton, 2, border_radius=8)
 
-                texto_opcion = f"{letra} {opcion}"  # igual que en tu print original
+                texto_opcion = f"{letra} {opcion}"
                 dibujar_texto_en_rect(VENTANA, texto_opcion, FUENTE_TEXTO, BLANCO, boton)
 
             ayuda = FUENTE_PEQUE.render("Haz clic en una opción (A, B, C o D)", True, GRIS_CLARO)
@@ -285,21 +298,30 @@ def main():
             VENTANA.fill(NEGRO)
 
             if ultima_correcta:
-                # "¡Respuesta correcta!\n"
+                # ✅ Correcta en verde y más grande
                 linea1 = "¡Respuesta correcta!"
-                render1 = FUENTE_TITULO.render(linea1, True, (0, 200, 0))
+                render1 = FUENTE_FEEDBACK.render(linea1, True, VERDE)
                 VENTANA.blit(render1, (ANCHO // 2 - render1.get_width() // 2, 200))
             else:
-                # "Respuesta incorrecta, la respuesta correcta era X.\nTe quedan {vidas} vidas.\n"
-                # Aquí añadimos también el texto de la opción correcta.
-                linea1 = f"Respuesta incorrecta, la respuesta correcta era {letra_correcta} ({texto_correcto})."
-                linea2 = f"Te quedan {vidas_mostradas} vidas."
+                # ✅ Incorrecta en rojo y más grande
+                # Formato más claro: "Respuesta incorrecta. La respuesta correcta era A) Título"
+                linea1 = f"Respuesta incorrecta. La respuesta correcta era {letra_correcta}) {texto_correcto}"
+                linea2 = texto_vidas(vidas_mostradas)  # ✅ singular/plural
 
-                render1 = FUENTE_TEXTO.render(linea1, True, BLANCO)
-                VENTANA.blit(render1, (ANCHO // 2 - render1.get_width() // 2, 200))
+                # ✅ Ajuste a pantalla: partimos el texto en varias líneas centradas
+                dibujar_texto_multilinea_centrado(
+                    VENTANA,
+                    linea1,
+                    FUENTE_FEEDBACK,
+                    ROJO,
+                    ANCHO // 2,
+                    160,
+                    max_ancho=ANCHO - 120,
+                    interlineado=8,
+                )
 
-                render2 = FUENTE_TEXTO.render(linea2, True, BLANCO)
-                VENTANA.blit(render2, (ANCHO // 2 - render2.get_width() // 2, 240))
+                render2 = FUENTE_FEEDBACK_PEQUE.render(linea2, True, BLANCO)
+                VENTANA.blit(render2, (ANCHO // 2 - render2.get_width() // 2, 300))
 
             texto_cont = FUENTE_PEQUE.render(
                 "Pulsa cualquier tecla o haz clic para continuar",
@@ -308,45 +330,42 @@ def main():
             )
             VENTANA.blit(
                 texto_cont,
-                (ANCHO // 2 - texto_cont.get_width() // 2, 320),
+                (ANCHO // 2 - texto_cont.get_width() // 2, 380),
             )
 
         elif estado == "GAME_OVER":
             VENTANA.fill(NEGRO)
-
             y = 120
 
             if fin_por_vidas:
-                # "Has cometido 3 errores. ¡El juego ha terminado!"
-                linea = "Has cometido 3 errores. ¡El juego ha terminado!"
-                render_err = FUENTE_TEXTO.render(linea, True, ROJO)
+                # ✅ Has perdido en rojo y más grande
+                linea = "Has perdido. ¡Te has quedado sin vidas!"
+                render_err = FUENTE_FEEDBACK.render(linea, True, ROJO)
                 VENTANA.blit(render_err, (ANCHO // 2 - render_err.get_width() // 2, y))
-                y += 60
+                y += 70
 
-                # En este caso NO mostramos "¡Enhorabuena, has ganado!"
                 linea1 = f"¡Juego terminado, {nombre_jugador}!"
                 render1 = FUENTE_TEXTO.render(linea1, True, BLANCO)
                 VENTANA.blit(render1, (ANCHO // 2 - render1.get_width() // 2, y))
-                y += 40
+                y += 45
 
                 linea3 = f"Tu puntuación fue: {puntuacion}/{num_preguntas}"
                 render3 = FUENTE_TEXTO.render(linea3, True, BLANCO)
                 VENTANA.blit(render3, (ANCHO // 2 - render3.get_width() // 2, y))
 
             else:
-                # Caso normal: ha llegado al final sin perder las vidas.
+                # ✅ Enhorabuena en verde y más grande
                 linea1 = f"¡Juego terminado, {nombre_jugador}!"
-                linea2 = "¡Enhorabuena, has ganado!"
-                linea3 = f"Tu puntuación fue: {puntuacion}/{num_preguntas}"
-
                 render1 = FUENTE_TEXTO.render(linea1, True, BLANCO)
                 VENTANA.blit(render1, (ANCHO // 2 - render1.get_width() // 2, y))
-                y += 40
+                y += 50
 
-                render2 = FUENTE_TEXTO.render(linea2, True, BLANCO)
+                linea2 = "¡Enhorabuena, has ganado!"
+                render2 = FUENTE_FEEDBACK.render(linea2, True, VERDE)
                 VENTANA.blit(render2, (ANCHO // 2 - render2.get_width() // 2, y))
-                y += 40
+                y += 60
 
+                linea3 = f"Tu puntuación fue: {puntuacion}/{num_preguntas}"
                 render3 = FUENTE_TEXTO.render(linea3, True, BLANCO)
                 VENTANA.blit(render3, (ANCHO // 2 - render3.get_width() // 2, y))
 

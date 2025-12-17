@@ -168,12 +168,13 @@ Resultados y mensaje final
 
 ## 🧪 Pruebas realizadas
 
-Prueba                                     Resultado
-Introducir texto en lugar de número         Error controlado con try/except
-Elegir menos de 5 preguntas                 Mensaje + nueva petición
-Elegir más preguntas de las disponibles     Mensaje + nueva petición
-Responder con letras minúsculas             Convertido a mayúsculas con .upper()
-Perder todas las vidas                     Bucle finaliza con break
+| Prueba | Resultado |
+|---|---|
+| Introducir texto en lugar de número | Error controlado con `try/except` |
+| Elegir menos de 5 preguntas | Mensaje + nueva petición |
+| Elegir más preguntas de las disponibles | Mensaje + nueva petición |
+| Responder con letras minúsculas | Convertido a mayúsculas con `.upper()` |
+| Perder todas las vidas | Bucle finaliza con `break` |
 
 ---
 
@@ -191,6 +192,8 @@ Añadir sonidos o animaciones
 
 Integrar niveles de dificultad
 
+---
+
 ## 🎤 Presentación del proyecto
 
 Incluye:
@@ -207,18 +210,59 @@ Demo en directo
 
 Preguntas de la profesora (cliente)
 
+---
+
+## 🗂️ Estructura del repositorio
+
+```text
+proyecto-da-promo-64-modulo-1-team-2/   ← raíz del repo
+├─ README.md
+├─ trivial.ipynb
+└─ trivial_pygame/
+   ├─ main.py
+   ├─ ui_utils.py
+   └─ preguntas.py
+```
+
+---
+
 ## 📚 Cómo ejecutar el programa
 
-Requisitos:
+### Opción 1: Ejecutar en Jupyter Notebook (versión original)
 
-Python 3.x
+**Requisitos:**
 
-Archivo .ipynb
+- Python 3.x
+- Jupyter Notebook (archivo `.ipynb`)
 
-Ejecutar en Jupyter Notebook:
+**Pasos:**
 
-Abrir el archivo trivial.ipynb → Correr todas las celdas
+1. Abrir el archivo `trivial.ipynb`
+2. Ejecutar todas las celdas
+
+---
+
+### Opción 2: Ejecutar la interfaz gráfica (Pygame)
+
+**Requisitos:**
+
+- Python 3.x
+- `pygame` instalado
+
+**Pasos (abre la terminal en la carpeta del repo y ejecuta):**
+
+```bash
+pip install pygame
+python trivial_pygame/main.py
+
+# En Windows también puede ser:
+py trivial_pygame/main.py
+```
+
+---
 
 ## 📄 Licencia
 
-Proyecto académico del bootcamp. Uso educativo.
+Proyecto académico del bootcamp (Adalab). Uso educativo.
+
+Autores: Camila López · María Granero · Nieves Sánchez
