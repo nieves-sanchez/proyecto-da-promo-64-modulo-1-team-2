@@ -168,13 +168,13 @@ Resultados y mensaje final
 
 ## 🧪 Pruebas realizadas
 
-| Prueba | Resultado |
-|---|---|
-| Introducir texto en lugar de número | Error controlado con `try/except` |
-| Elegir menos de 5 preguntas | Mensaje + nueva petición |
-| Elegir más preguntas de las disponibles | Mensaje + nueva petición |
-| Responder con letras minúsculas | Convertido a mayúsculas con `.upper()` |
-| Perder todas las vidas | Bucle finaliza con `break` |
+| Prueba                                       | Resultado                              |
+|----------------------------------------------|----------------------------------------|
+| Introducir texto en lugar de número          | Error controlado con `try/except`      |
+| Elegir menos de 5 preguntas                  | Mensaje + nueva petición               |
+| Elegir más preguntas de las disponibles      | Mensaje + nueva petición               |
+| Responder con letras minúsculas              | Convertido a mayúsculas con `.upper()` |
+| Perder todas las vidas                       | Bucle finaliza con `break`             |
 
 ---
 
