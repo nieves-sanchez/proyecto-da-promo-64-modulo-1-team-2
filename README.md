@@ -1,264 +1,132 @@
-# 📄 Proyecto Módulo 1 – Trivial en Python
+# Trivial de películas y series en Python
 
-## 🎮 Trivial de Series – Proyecto Módulo 1 (Python)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white) ![Pygame](https://img.shields.io/badge/Pygame-2E7D32?logo=python&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white) ![GitHub Projects](https://img.shields.io/badge/GitHub_Projects-181717?logo=github&logoColor=white)
 
-Un juego de preguntas y respuestas desarrollado en Python por el Equipo 2 formado por Camila López, María Granero y Nieves Sánchez.
+Proyecto académico del módulo 1 del **Bootcamp de Data Analytics & IA de Adalab**, en equipo de tres personas y con Scrum.
 
-El objetivo es practicar estructuras de control, diccionarios, listas, funciones, manejo de errores y lógica básica.
-
----
-
-## 👥 Equipo y Roles
-
-| Miembro        | Rol           | Tareas principales                                                              |
-|----------------|---------------|---------------------------------------------------------------------------------|
-| Nieves Sánchez | Scrum Master  | Organización, tablero Kanban, milestones, control de avances, README y revisión |
-| Camila López   | Desarrollo    | Lógica del juego, funciones, control de errores y revisión                      |
-| María Granero  | Documentación | Estructura de datos, README, presentación, prueba del juego y revisión          |
+![Tablero Kanban del proyecto](assets/tablero_kanban.png)
 
 ---
 
-## 🎯 Objetivo del proyecto
+## Resumen del proyecto
 
-Desarrollar un juego de trivial en consola donde:
-
-- El jugador elige cuántas preguntas quiere jugar (mínimo 5).
-
-- No puede elegir más preguntas de las que existen.
-
-- Dispone de 3 vidas y pierde 1 por cada respuesta incorrecta.
-
-- Si llega a 0 vidas → la partida termina automáticamente.
-
-- Cada acierto suma 1 punto a la puntuación final.
-
-- El juego finaliza cuando:
-
-  - se responden todas las preguntas seleccionadas, o
-  - el jugador se queda sin vidas.
+- **Qué es:** un juego de preguntas y respuestas en consola sobre películas y series, con una versión gráfica en Pygame.
+- **Reglas:** el jugador elige cuántas preguntas quiere (mínimo 5), tiene 3 vidas y pierde una por cada fallo; cada acierto suma un punto.
+- **Qué practica:** listas y diccionarios, funciones, bucles, condicionales, control de errores con `try/except` y `random.sample`.
+- **Cómo lo organizamos:** 9 fases (milestones) y 46 tareas en un tablero Kanban de GitHub Projects.
 
 ---
 
-## 🧠 Contenidos de Python aplicados
-
-Este proyecto pone en práctica:
-
-- Variables y tipos de datos
-
-- Listas y diccionarios
-
-- Funciones
-
-- Bucles for
-
-- Condiciones if / elif / else
-
-- Manejo de errores con try/except
-
-- Conversión de datos (int(), upper(), etc.)
-
-- Uso de librerías (random.sample)
+**📌 Mi contribución en este proyecto**  
+He sido la Scrum Master: he organizado el trabajo en 9 fases y 46 tareas en el tablero Kanban, he hecho el seguimiento de los avances, he preparado la versión con Pygame y he trabajado en el README. Camila López ha programado la lógica del juego (funciones, vidas y control de errores) y María Granero se ha encargado de la estructura de datos de las preguntas, el README, la presentación y las pruebas del juego.
 
 ---
 
-## 🏗️ Estructura del juego
+## Autoras
 
-1. Inicio
+**Camila López**
 
-    Mensaje de bienvenida
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github&logoColor=white)](https://github.com/camilalopezmrt)
 
-    Petición del nombre del jugador
+**María Granero**
 
-    Petición del número de preguntas
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github&logoColor=white)](https://github.com/mariagranero)
 
-    Validación: mínimo 5
+**Nieves Sánchez**
 
-    Validación: máximo = número total de preguntas disponibles
-
-    Manejo de errores con try/except
-
-2. Preparación de la partida
-
-    Selección aleatoria de preguntas con random.sample()
-
-    Inicialización de variables:
-
-    puntuacion = 0
-
-    vidas = 3
-
-3. Bucle principal del juego
-
-    Para cada pregunta del mazo:
-
-    Mostrar pregunta y opciones
-
-    Solicitar respuesta (A/B/C/D)
-
-    Validar entrada
-
-    Comparar con la respuesta correcta
-
-    Si acierta → sumar 1 punto
-
-    Si falla → restar 1 vida
-
-    Si vidas == 0 → mensaje de fin de partida + break
-
-4. Final del juego
-
-    Mostrar puntuación total
-
-    Mensaje final según:
-
-    si ha agotado vidas
-
-    o si ha terminado todas las preguntas
+[![GitHub](https://img.shields.io/badge/GitHub-Perfil-black?logo=github&logoColor=white)](https://github.com/nieves-sanchez)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nieves-sanchez-data)
+[![Email](https://img.shields.io/badge/Email-Escr%C3%ADbeme-EA4335?logo=gmail&logoColor=white)](mailto:nsanchezgarcia86@gmail.com)
 
 ---
 
-## 📦 Estructura de datos
+## Organización del trabajo
 
-Las preguntas están almacenadas en una lista de diccionarios, un formato como este:
+| Fase | Contenido | Tareas |
+|---|---|---|
+| 1 | Construcción de la estructura de datos (preguntas) | 6 |
+| 2 | Funciones base del juego | 5 |
+| 3 | Lógica del juego | 12 |
+| 4 | Final del juego | 2 |
+| 5 | Manejo de errores y estabilidad | 5 |
+| 6 | Documentación del proyecto | 2 |
+| 7 | Presentación | 6 |
+| 8 | Preparación de la demo | 1 |
+| 9 | Extras | 7 |
 
+Cada tarea pasaba por las columnas Backlog, In progress, In review y Done del tablero.
+
+| Persona | Rol | Tareas principales |
+|---|---|---|
+| Nieves Sánchez | Scrum Master | Organización, tablero Kanban, milestones, seguimiento de avances, versión Pygame, README y revisión |
+| Camila López | Desarrollo | Lógica del juego, funciones, control de errores y revisión |
+| María Granero | Documentación | Estructura de datos, README, presentación, prueba del juego y revisión |
+
+---
+
+## Cómo funciona el juego
+
+1. **Inicio:** pide el nombre y el número de preguntas, y comprueba que sea un número entre 5 y el total disponible.
+2. **Preparación:** elige las preguntas al azar con `random.sample()` y empieza con 0 puntos y 3 vidas.
+3. **Partida:** muestra cada pregunta con sus opciones A–D, valida la respuesta y suma un punto o resta una vida.
+4. **Final:** termina al responder todas las preguntas o al quedarse sin vidas, y muestra la puntuación.
+
+Las preguntas son una lista de diccionarios:
+
+```python
 preguntas = [
     {
         "pregunta": "Un pueblo donde lo inexplicable...",
-        "opciones": {
-            "A": "Dark",
-            "B": "Stranger Things",
-            "C": "The OA",
-            "D": "Glitch"
-        },
+        "opciones": {"A": "Dark", "B": "Stranger Things", "C": "The OA", "D": "Glitch"},
         "respuesta_correcta": "B"
     },
     ...
 ]
-
-Este formato permite:
-
-Acceso a cada pregunta mediante índices
-
-Acceso limpio a opciones con claves A/B/C/D
-
-Manipulación sencilla por parte del bucle del juego
+```
 
 ---
 
-## 🔀 Flujo del programa (resumen visual)
+## Pruebas realizadas
 
-Inicio → Petición de nombre → Elección nº de preguntas → Validación  
-↓  
-random.sample → Crear mazo de juego  
-↓  
-Inicializar puntuación y vidas  
-↓  
-Bucle for de preguntas  
-     ├─ Mostrar pregunta  
-     ├─ Pedir respuesta  
-     ├─ Validar  
-     ├─ Acierto → +1 punto  
-     └─ Fallo → -1 vida  
-↓  
-¿vidas == 0? → Fin  
-↓  
-Resultados y mensaje final
+| Prueba | Resultado |
+|---|---|
+| Introducir texto en lugar de número | Error controlado con `try/except` |
+| Elegir menos de 5 preguntas | Mensaje y nueva petición |
+| Elegir más preguntas de las disponibles | Mensaje y nueva petición |
+| Responder en minúsculas | Se convierte a mayúsculas con `.upper()` |
+| Perder todas las vidas | La partida termina con `break` |
 
 ---
 
-## 🧪 Pruebas realizadas
-
-| Prueba                                       | Resultado                              |
-|----------------------------------------------|----------------------------------------|
-| Introducir texto en lugar de número          | Error controlado con `try/except`      |
-| Elegir menos de 5 preguntas                  | Mensaje + nueva petición               |
-| Elegir más preguntas de las disponibles      | Mensaje + nueva petición               |
-| Responder con letras minúsculas              | Convertido a mayúsculas con `.upper()` |
-| Perder todas las vidas                       | Bucle finaliza con `break`             |
-
----
-
-## 🚀 Mejoras futuras
-
-Modo dos jugadores
-
-Guardado de puntuaciones en archivo
-
-Categorías de preguntas
-
-Añadir sonidos o animaciones
-
-Integrar niveles de dificultad
-
----
-
-## 🎤 Presentación del proyecto
-
-Incluye:
-
-Explicación del objetivo
-
-Estructura del juego
-
-Flujo de ejecución
-
-Diapositivas en Canva
-
-Demo en directo
-
----
-
-## 🗂️ Estructura del repositorio
+## Estructura del repositorio
 
 ```text
-proyecto-da-promo-64-modulo-1-team-2/   ← raíz del repo
-├─ README.md
-├─ trivial.ipynb
-└─ trivial_pygame/
-   ├─ main.py
-   ├─ ui_utils.py
-   └─ preguntas.py
+.
+├── README.md
+├── trivial.ipynb                                   # versión en consola
+├── trivial_pygame/                                 # versión gráfica
+│   ├── main.py
+│   ├── ui_utils.py
+│   └── preguntas.py
+├── Trivial Películas y Series que Dejan Huella.pdf  # presentación
+└── assets/                                         # captura del tablero
 ```
 
 ---
 
-## 📚 Cómo ejecutar el programa
+## Cómo ejecutarlo
 
-### Opción 1: Ejecutar en Jupyter Notebook (versión original)
+**En Jupyter:** abre `trivial.ipynb` y ejecuta todas las celdas.
 
-**Requisitos:**
-
-- Python 3.x
-- Jupyter Notebook (archivo `.ipynb`)
-
-**Pasos:**
-
-1. Abrir el archivo `trivial.ipynb`
-2. Ejecutar todas las celdas
-
----
-
-### Opción 2: Ejecutar la interfaz gráfica (Pygame)
-
-**Requisitos:**
-
-- Python 3.x
-- `pygame` instalado
-
-**Pasos (abre la terminal en la carpeta del repo y ejecuta):**
+**Con Pygame:**
 
 ```bash
+git clone https://github.com/nieves-sanchez/proyecto-da-promo-64-modulo-1-team-2.git
+cd proyecto-da-promo-64-modulo-1-team-2
 pip install pygame
 python trivial_pygame/main.py
-
-# En Windows también puede ser:
-py trivial_pygame/main.py
 ```
 
 ---
 
-## 📄 Licencia
-
-Proyecto académico del bootcamp (Adalab). Uso educativo.
-
-Autores: Camila López · María Granero · Nieves Sánchez
+Proyecto con fines educativos, parte del Bootcamp de Data Analytics & IA de Adalab.
